@@ -19,4 +19,9 @@ To perform this lab you will need:
 * An Oracle Management Cloud Tenancy
 * A text editor (e.g. Atom, Sublime, etc)
 
-## Lab 1: Cleaning of Web Application Firewall Data 
+## Lab 1: Cleaning of Web Application Firewall Data
+Open terminal (or your OS' command line) and clone this repo by running the following command: ```git clone https://github.com/dbrett90/OMC-Dyn-Integration.git```. Make sure that you are not on a corporate network as it will interfere with the cloning process. 
+
+Navigate to logFiles > dyn_newest_logs.csv and inspect the data. You will notice a number of fields included that will not be relevant for data visualization and a number of fields that need to be standardized for OMC's parsers. Specifically we will be updating the timestamp to be in POSIX format and removing columns 6, 11, & 17. 
+
+Navigate to the python scripts directory. Feel free to inspect masterClean.py, which contains all the methods necessary to clean the Dyn Data. When finished, run ```python masterClean.py``` from your command line. The file we will be using is dyn_data_final.csv. You may ignore all the other log files created. Make sure you know where this file is saved as we will need access to it later.  
