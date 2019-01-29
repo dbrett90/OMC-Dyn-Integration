@@ -47,7 +47,7 @@ Select the "Registration Keys" tab. If there are no current registration keys cr
 Navigate to your terminal. from the main directory cd into the ssh directory using the command ``` cd .ssh```. From this directory run the following command ```scp -i YOUR_KEY /Path/To/Cloud/Agent  opc@PUBLIC_IP_OF_INSTANCE:/home/opc/```. This will copy the cloud agent  onto your linux box.
 ![1.)](/assets/pic12.png?raw=true)
 
-After the cloudagent has been successfully copied over we will need to ssh into the actual box. Run ```ssh -i YOUR_KEY opc@PUBLIC_IP_OF_INSTANCE``` 
+After the cloudagent has been successfully copied over we will need to ssh into the actual box. Run ```ssh -i YOUR_KEY opc@PUBLIC_IP_OF_INSTANCE```. run a ```ls``` command (bash) or ```dir``` (windows) and make sure you are in the same directory as your zipped cloud agent. By default this directory is ```/home/opc```. 
 
 ## Lab 3: Cleaning of Web Application Firewall Data
 Open terminal (or your OS' command line) and clone this repo by running the following command: ```git clone https://github.com/dbrett90/OMC-Dyn-Integration.git```. Make sure that you are not on a corporate network as it will interfere with the cloning process. 
