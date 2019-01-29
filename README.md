@@ -24,6 +24,10 @@ To perform this lab you will need:
 ## Lab 1: Installing a Cloud Agent on a Linux Box
 Navigate to cloud.oracle.com and log in with your credentials. Click the navigation menu in the upper left and select "Compute > Instances > Create Intance." Name the Instance, select the AD (AD1 if possible) and select instance type (VM). Pair your SSH key with the instance. if you do not already have an ssh key you can generate one from the command line by running ```ssh-keygen```. Select the appropriate compartment, VCN and subnet. You may need to configure these if you have not already done so. Click "Create."
 ![1.)](/assets/pic1.png?raw=true)
+![1.)](/assets/pic2.png?raw=true)
+![1.)](/assets/pic3.png?raw=true)
+![1.)](/assets/pic4.png?raw=true)
+![1.)](/assets/pic5.png?raw=true)
 
 ## Lab 2: Cleaning of Web Application Firewall Data
 Open terminal (or your OS' command line) and clone this repo by running the following command: ```git clone https://github.com/dbrett90/OMC-Dyn-Integration.git```. Make sure that you are not on a corporate network as it will interfere with the cloning process. 
