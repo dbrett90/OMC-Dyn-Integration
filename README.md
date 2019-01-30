@@ -48,6 +48,17 @@ Navigate to your terminal. from the main directory cd into the ssh directory usi
 ![1.)](/assets/pic12.png?raw=true)
 
 After the cloudagent has been successfully copied over we will need to ssh into the actual box. Run ```ssh -i YOUR_KEY opc@PUBLIC_IP_OF_INSTANCE```. run a ```ls``` command (bash) or ```dir``` (windows) and make sure you are in the same directory as your zipped cloud agent. By default this directory is ```/home/opc```. Unzip the agent by running ```unzip NAME_OF_CLOUD_AGENT_ZIP```.  
+![1.)](/assets/pic13.png?raw=true)
+
+You now need to provide the cloud agent with some information. Access the agent.rsp file from the command line by running ```vim agent.rsp```. Provide the Tenant Name, Agent Registration Key and OMC URL you copied down earlier. For agent base directory use ```/home/opc/agent```. Make sure the file is updated.
+![1.)](/assets/pic14.png?raw=true)
+
+Run ```./AgentInstall.sh```. You can confirm that the agent is up and running by navigating to the bin folder (```cd agent/agent_inst/bin```) and running ```./omcli status agent```. This will confirm that the agent is up and running.
+![1.)](/assets/pic15.png?raw=true)
+
+You can also confirm that the agent is up and running from the OMC console by navigating to Administration > Agents > Cloud Agents. An active agent will have a green arrow.
+![1.)](/assets/pic16.png?raw=true)
+
 
 ## Lab 3: Cleaning of Web Application Firewall Data
 Open terminal (or your OS' command line) and clone this repo by running the following command: ```git clone https://github.com/dbrett90/OMC-Dyn-Integration.git```. Make sure that you are not on a corporate network as it will interfere with the cloning process. 
