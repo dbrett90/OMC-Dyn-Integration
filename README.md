@@ -80,7 +80,7 @@ If you open up the WAF Log file (in texteditor, **NOT** in Excel) you will see a
 Once you have created all necessary custom fields, click the log parsers tab. Select "Create". Name the parser and paste one line from the log file (from text editor, **NOT** Excel as Excel won't copy as comma-delimited) into the example log content block. Select "Next". Highlight the entire block and click "Next."
 ![1.)](/assets/pic19.png?raw=true)
 
-Highlight each field and match with the corresponding field. Make sure that each field passes the parser test (will highlight green if successful). For timestamp make sure this is in POSIX format. Click create when done.
+Highlight each field and match with the corresponding field. Make sure that each field passes the parser test (will highlight green if successful). For timestamp make sure this is in POSIX format. Click next when done and create the parser.
 ![1.)](/assets/pic20.png?raw=true)
 
 In the OMC Console go to Log Sources > Create.
@@ -90,6 +90,28 @@ Name the parser and leave the source type as "file." Select "Cloud Agent" as ent
 ![1.)](/assets/pic22.png?raw=true)
 
 
-
-
 ## Lab 5: Uploading Data & Creating Dashboards
+
+If you have not securely copied the Dyn log file to your compute node, you can manually upload it into OMC. Navigate to Log Admin > Uploads > Mew Upload.
+![1.)](/assets/pic23.png?raw=true)
+
+Name the Upload, select the files from your browser and click the > button. Now make sure to associate the upload with the log source you just created and the entity with your cloud agent. Click the > button. Review and Upload.
+![1.)](/assets/pic24.png?raw=true)
+
+On the uploads page click the hamburger menu next to your upload and select "View in Log Explorer."
+![1.)](/assets/pic25.png?raw=true)
+
+If the log parser was correctly configured you should be able to click into a given record and see the information in human readable form. If done incorrectly there will be a blue "i" next to the entry.
+![1.)](/assets/pic26.png?raw=true)
+
+We can now start creating visualizations. Change the graph on the visualization option and drag the field (from the other dropdown) into the "Group By" box. Click "Save > Save As."
+![1.)](/assets/pic27.png?raw=true)
+
+Name the graphic, select "Add to Dashboard" and choose the "New Dashboard" option. Name the Dashboard and click save. Continue making and adding graphics to this dashboard until you are satisfied with visuals.
+![1.)](/assets/pic28.png?raw=true)
+
+View your dashboards by going Home > Dashboards. You can move visuals around by pressing the edit button and dragging visuals.
+![1.)](/assets/pic29.png?raw=true)
+![1.)](/assets/pic30.png?raw=true)
+
+## Lab 6: Configuring Security Monitoring & Analytics
