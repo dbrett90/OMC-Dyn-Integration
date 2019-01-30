@@ -174,7 +174,7 @@ class masterClean(object):
 ######################GENERATE NEW FILES###############################
 #######################################################################
 fillBlanks = masterClean('../logFiles/dyn_newest_logs.csv', '../logFiles/dyn_data1.csv').fillBlanks()
-deleteCols = masterClean('../logFiles/dummy_original_logs1.csv', '../logFiles/dyn_data2.csv').deleteCols()
-overwrite= masterClean('../logFiles/dummy_original_logs2.csv', '../logFiles/dyn_data3.csv').createStamps()
-addConts = masterClean('../logFiles/dummy_original_logs3.csv', '../logFiles/dyn_data4.csv').createContinentColumn()
-addusers = masterClean('../logFiles/dummy_final.csv', '../logFiles/dyn_data_final.csv').genUsername()
+deleteCols = masterClean('../logFiles/dyn_data1.csv', '../logFiles/dyn_data2.csv').deleteCols()
+overwrite= masterClean('../logFiles/dyn_data2.csv', '../logFiles/dyn_data3.csv').createStamps()
+addConts = masterClean('../logFiles/dyn_data3.csv', '../logFiles/dyn_data4.csv').createContinentColumn()
+addusers = masterClean('../logFiles/dyn_data4.csv', '../logFiles/dyn_data_final.csv').genUsername()
