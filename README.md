@@ -22,9 +22,15 @@ To perform this lab you will need:
 * A text editor (e.g. Atom, Sublime, etc)
 
 # Table of Contents
-* [Lab 1: Installing a Cloud Agent on a Linux Box](#Lab 1: Installing a Cloud Agent on a Linux Box)
+* [Lab 1: Creating Your Linux Server](https://github.com/dbrett90/OMC-Dyn-Integration#lab-1-creating-your-linux-server)
+* [Lab 2: Installing a Cloud Agent on your Linux Box](https://github.com/dbrett90/OMC-Dyn-Integration#lab-2-installing-a-cloud-agent-on-your-linux-box)
+* [Lab 3: Cleaning of Web Application Firewall Data](https://github.com/dbrett90/OMC-Dyn-Integration#lab-3-cleaning-of-web-application-firewall-data)
+* [Lab 4: Configuring Log Parsers & Sources](https://github.com/dbrett90/OMC-Dyn-Integration#lab-4-configuring-log-parsers--sources)
+* [Lab 5: Uploading Data & Creating Dashboards](https://github.com/dbrett90/OMC-Dyn-Integration#lab-5-uploading-data--creating-dashboards)
+* [Lab 6: Configuring Security Monitoring & Analytics](https://github.com/dbrett90/OMC-Dyn-Integration#lab-6-configuring-security-monitoring--analytics)
 
-## Lab 1: Installing a Cloud Agent on a Linux Box
+
+## Lab 1: Creating Your Linux Server
 Navigate to [Cloud Login Page](https://cloud.oracle.com/home)  and log in with your credentials. Click the navigation menu in the upper left and select "Compute > Instances > Create Intance." Name the Instance, select the AD (AD1 if possible) and select instance type (VM). Pair your SSH key with the instance. if you do not already have an ssh key you can generate one from the command line by running ```ssh-keygen```. Select the appropriate compartment, VCN and subnet. You may need to configure these if you have not already done so. Click "Create."
 ![1.)](/assets/pic1.png?raw=true)
 ![1.)](/assets/pic2.png?raw=true)
