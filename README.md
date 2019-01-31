@@ -161,4 +161,4 @@ In real production setting, this data will be continuously streamed to OMC by OM
 ```
 
 
-Once you have successfully uploaded the three log files, navigate back to the Uploads page. Refresh the page to see your uploaded log files.
+Once you have successfully uploaded the three log files, navigate back to the Uploads page. Refresh the page to see your uploaded log files. If you go to the Security Monitoring & Analytics page you should now be able to see potential threats.
