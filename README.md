@@ -92,10 +92,10 @@ Name the parser and leave the source type as "file." Select "Cloud Agent" as ent
 
 ## Lab 5: Uploading Data & Creating Dashboards
 
-If you have not securely copied the Dyn log file to your compute node, you can manually upload it into OMC. Navigate to Log Admin > Uploads > Mew Upload.
+If you have not securely copied the Dyn log file to your compute node, you can manually upload it into OMC. Navigate to `Log Admin` > `Uploads` > `New Upload`.
 ![1.)](/assets/pic23.png?raw=true)
 
-Name the Upload, select the files from your browser and click the > button. Now make sure to associate the upload with the log source you just created and the entity with your cloud agent. Click the > button. Review and Upload.
+Name the Upload, select the files from your browser and click the `>` button. Now make sure to associate the upload with the log source you just created and the entity with your cloud agent. Click the > button. Review and Upload.
 ![1.)](/assets/pic24.png?raw=true)
 
 On the uploads page click the hamburger menu next to your upload and select "View in Log Explorer."
@@ -110,8 +110,55 @@ We can now start creating visualizations. Change the graph on the visualization 
 Name the graphic, select "Add to Dashboard" and choose the "New Dashboard" option. Name the Dashboard and click save. Continue making and adding graphics to this dashboard until you are satisfied with visuals.
 ![1.)](/assets/pic28.png?raw=true)
 
-View your dashboards by going Home > Dashboards. You can move visuals around by pressing the edit button and dragging visuals.
+View your dashboards by going Home > Dashboards. You can move visuals around by pressing the edit button.
 ![1.)](/assets/pic29.png?raw=true)
 ![1.)](/assets/pic30.png?raw=true)
 
 ## Lab 6: Configuring Security Monitoring & Analytics
+
+Security Monitoring and Analytics can be configured for any given piece of Cloud Infrastructure, but this will also require specific configuration of identity context. To speed the process up we will upload our own custom log files to demonstrate a number of specific threats that will also showcase identity context.
+
+First, Navigate to `Menu Icon` > `Home` > `Administration` > `Entities Configuration` > `Licensing`. Click on each licensing configuration to match the below screenshot (i.e. Log Collection = Enabled, SMA Enrichment = Enabled, Assignment = Enterprise + Config & Compliance)
+![1.)](/assets/pic31.png?raw=true)
+
+ssh into your linux box. Create the Create the directory `/u01/stage`. Copy the zipped [SMA data](logFiles/smaData/sma-sample.zip) to `/u01/stage` and unzip the file.
+
+In addition to log data, sample user context data will be added to OMC as well to provide a richer experience by mapping users identified in security logs to detailed corporate directory sourced from the company’s Identity Service. In real production setting, this data will come from an Identity Service such as IDCS and by means of integration.
+
+In your linux host session, navigate to /u01/stage
+1.	From [My Cloud Services Dashboard](https://myservices.us2.oraclecloud.com/mycloud/cloudportal/dashboard), toggle "Identity Domain" selector to your "Traditional" domain, then click on `Management Cloud` as shown below
+
+	![1.)](/assets/pic32.png?raw=true)
+
+1.	Get the Tenant ID, OMC Service Instance Name, and OMC Username as shown below
+
+	![1.)](/assets/pic33.png?raw=true)
+
+1. 	Using the items gathered above, update environment variables accordingly as shown in this example
+```
+export tenantID=acmeinc			#Tenant ID
+export instanceName=ops			#OMC Service Instance Name
+export username=John.Doe@gmail.com	#OMC Username
+```
+3.	Execute the Unix shell script `omc_upload_usr_context.sh` and type in your OMC account password when prompted to upload User context file
+
+```
+[cdsma@myhost]$ ./omc_upload_usr_context.sh
+```
+
+For the benefit of this lab, you will be uploading sample Linux Secure logs files to OMC covering the following 3 security threats types:
+
+   - `Target Account Attack `
+   - `Multiple Failed Login `
+   - `Brute Force Attack `
+
+In real production setting, this data will be continuously streamed to OMC by OMC cloud agents and API integration. SMA supports uploading user data available in SCIM or LDIF format. The former will be used.
+
+1.	From the same Linux host as indicated earlier and still with the environment variables set, run the Unix shell script `omc_upload_security_events.sh` to upload Linux secure logs.
+
+```
+[cdsma@myhost]$ ./omc_upload_security_events.sh
+```
+
+
+Once you have successfully uploaded the three log files, navigate back to the Uploads page. Refresh the page to see your uploaded log files.
